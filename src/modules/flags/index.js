@@ -35,7 +35,7 @@ const initialState = {
         actions: []
     },
     error: {
-        actions: []  // actions: { type1: { message }, ... }
+        actions: []  //[{ type: 'type1', message: '...' }]
     }
 }
 
@@ -71,12 +71,18 @@ function handleSuccess(state, action){
 }
 
 function handleFailed(state, action){
+    const actions = state.error.actions;
+    const { type, error } = action;
+
     return {
         ...state,
         error: {
-
+            actions: !actions.find(action => action.type === type) 
+                ? actions.concat({ type, message: error.message })
+                : actions.map(action => action.type === type 
+                    ? (action.message = error.message) : action)
         }
-    }
+    };
 }
 
 

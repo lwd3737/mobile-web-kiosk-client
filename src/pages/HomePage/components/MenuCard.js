@@ -1,24 +1,28 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-import { Card } from 'common/components/Cards';
+import { useHistory } from 'react-router-dom';
+import { SimpleCard } from 'common/components';
 
-export default function MenuCard({ children }){
+export default function MenuCard({ children, onMenuMoveClick }){
     return (
-        <Card
-            extraStyles={{
-                marginBottom: "10%"
-            }}
+        <S.MenuCard
+            onClick={onMenuMoveClick}
         >
-            <S.CardInner>
-                {children}
-            </S.CardInner>
-        </Card>
+            <SimpleCard
+                extraStyles={{
+                    marginBottom: "25%",
+                    height: "25vw",
+                }}
+            >
+                    {children}
+            </SimpleCard>
+        </S.MenuCard>
     )
 }
 
 const S = {
-    CardInner: styled.div`
+    MenuCard: styled.div`
         
     `
 }

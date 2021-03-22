@@ -48,6 +48,10 @@ const GlobalStyle = createGlobalStyle`
     	border-collapse: collapse;
     	border-spacing: 0;
     }
+    button{
+        border: none;
+        background: white;
+    }
 `
 
 export default GlobalStyle

@@ -6,8 +6,6 @@ import { ThemeProvider } from "styled-components";
 import ReduxThunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import logger from 'redux-logger'
-import { BrowserRouter as Router } from 'react-router-dom';
-
 
 import App from './App';
 import reportWebVitals from './reportWebVitals';
