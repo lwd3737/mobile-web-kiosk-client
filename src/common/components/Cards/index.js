@@ -1,12 +1,13 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-export function SimpleCard({ children, width, height, extraStyles }){
+export function SimpleCard({ children, width, height, extraStyles, onClick }){
     return (
         <S.Card
             width={width}
             height={height}
             style={extraStyles}
+            onClick={onClick}
         >
             {children}
         </S.Card>

@@ -18,12 +18,9 @@ function PurchasePage(){
     const basePath = '/kiosk/:partnerId/purchase'
     const history = useHistory();
     const { path, url } = useRouteMatch(basePath);
-    const { partnerId } = useParams();
-    console.log('path, url:', path, url, partnerId);
-
+    
     useEffect(() => {
         if(path === basePath){
-            console.log('replace:', `${url}/rooms`, `${basePath}/rooms`);
             history.replace(`${url}/rooms`);
         }
     }, [path]);
@@ -37,7 +34,7 @@ function PurchasePage(){
                     <RoomSelectionPage />
                 </Route>
                 <Route exact 
-                    path={`${basePath}/rooms/:roomId/seat`}
+                    path={`${basePath}/rooms/:roomId/seats`}
                 >
                     <SeatSelectionPage />
                 </Route>

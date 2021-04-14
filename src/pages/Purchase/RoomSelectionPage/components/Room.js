@@ -1,16 +1,25 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useHistory, useLocation } from 'react-router-dom';
 
 import { SimpleCard } from 'common/components';
 
-export default function Room({ id, number, name, seatCount, seatsInUseCount, onClick }){
+export default function Room({ id, number, name, seatCount, seatsInUseCount }){
+    const { pathname } = useLocation();
+    const history = useHistory();
+
+    const handleSeatSelectionMoveClick = (e) => {
+        e.stopPropagation();
+        history.push(`${pathname}/${id}/seats`);        
+    };
+
     return (
         <S.Room
             width="30vw"
             extraStyles={{
                 margin: '2vh 3vw'
             }}
-            onClick={onClick}
+            onClick={handleSeatSelectionMoveClick}
         >
             <S.Inner>
                 <div className="room-name">

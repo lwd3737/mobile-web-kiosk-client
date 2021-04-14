@@ -1,7 +1,8 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
     *{
+        box-sizing: border-box;
         color: rgb(0 0 0 / 65%);
     }
 
@@ -52,6 +53,6 @@ const GlobalStyle = createGlobalStyle`
         border: none;
         background: white;
     }
-`
+`;
 
-export default GlobalStyle
+export default GlobalStyle;
