@@ -1,12 +1,20 @@
 import React from "react";
 import styled, { css } from "styled-components";
+import { useRouteMatch, useHistory } from "react-router-dom";
 
 function SeatInfoCard({ number }) {
+  const { url } = useRouteMatch();
+  const history = useHistory();
+
+  const handlSelectUseTicketMoveClick = () => {
+    history.push(`${url}/useticket`);
+  };
+
   return (
     <S.SeatInfoCard>
       <div className="seat-info">{number}번 좌석</div>
       <div className="btn-wrapper">
-        <button>구매하기</button>
+        <button onClick={handlSelectUseTicketMoveClick}>구매하기</button>
       </div>
     </S.SeatInfoCard>
   );

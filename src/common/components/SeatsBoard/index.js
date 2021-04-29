@@ -25,7 +25,7 @@ export function SeatsBoard({ seats, selectedSeat, onSelectSeatClick }) {
   return (
     <S.SeatsBoard>
       <div className="seats">{renderSeats()}</div>
-      {selectedSeat.number && <SeatInfoCard number={selectedSeat.number} />}
+      {selectedSeat?.number && <SeatInfoCard number={selectedSeat.number} />}
     </S.SeatsBoard>
   );
 }
@@ -39,10 +39,11 @@ const S = {
     .seats {
       overflow: auto;
       max-height: 80%;
+      padding: 5vw;
 
       .row {
         display: flex;
-        justify-content: center;
+        //justify-content: center;
       }
     }
   `,
